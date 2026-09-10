@@ -1,0 +1,70 @@
+[
+  {
+    "source": "firstframe.mp4",
+    "parts": [
+      "assets/smooth-1-1.bin",
+      "assets/smooth-1-2.bin",
+      "assets/smooth-1-3.bin",
+      "assets/smooth-1-4.bin"
+    ],
+    "poster": "assets/poster-1.webp",
+    "sha256": "d3b790cb3f1850f343d7744db64b97985f2d990d359d0a63e195f97532f16d17",
+    "gop": 2
+  },
+  {
+    "source": "secondframeV2.mp4",
+    "parts": [
+      "assets/smooth-2-1.bin",
+      "assets/smooth-2-2.bin",
+      "assets/smooth-2-3.bin",
+      "assets/smooth-2-4.bin"
+    ],
+    "poster": "assets/poster-2.webp",
+    "sha256": "46bb2a1c94b7aa4689a98d33168e78919d1d65a281ec74cef952e70bfd082e8f",
+    "gop": 2
+  },
+  {
+    "source": "third.mp4",
+    "parts": [
+      "assets/smooth-3-1.bin",
+      "assets/smooth-3-2.bin"
+    ],
+    "poster": "assets/poster-3.webp",
+    "sha256": "754f60be8f859d2fb8f9432eb28343b0e5c8881f4e9a68a749271b6e5049efdf",
+    "gop": 2
+  },
+  {
+    "source": "5frame.mp4",
+    "parts": [
+      "assets/smooth-4-1.bin",
+      "assets/smooth-4-2.bin",
+      "assets/smooth-4-3.bin",
+      "assets/smooth-4-4.bin"
+    ],
+    "poster": "assets/poster-4.webp",
+    "sha256": "8c722e3b8469be0116b4838010c8acbc931d4cc6f42b951a7a79473b36de9301",
+    "gop": 2
+  },
+  {
+    "source": "6frame.mp4",
+    "parts": [
+      "assets/smooth-5-1.bin",
+      "assets/smooth-5-2.bin",
+      "assets/smooth-5-3.bin"
+    ],
+    "poster": "assets/poster-5.webp",
+    "sha256": "ae8077ca59d5b403d4f70e8f52e038ad8b5481e5cbc0f9620d248de8c03b8c1e",
+    "gop": 2
+  },
+  {
+    "source": "last.mp4",
+    "parts": [
+      "assets/smooth-6-1.bin",
+      "assets/smooth-6-2.bin",
+      "assets/smooth-6-3.bin"
+    ],
+    "poster": "assets/poster-6.webp",
+    "sha256": "46031eb69d4aa3b39b008e49113ad5f216d3b4d315a10fd5f8f5be6b8fc39e16",
+    "gop": 2
+  }
+]
