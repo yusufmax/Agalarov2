@@ -1,0 +1,105 @@
+/* Polish layer (ui-ux-pro-max pass): wayfinding eyebrows, EN/RU/UZ switcher,
+   chapter counter + progress rail, SVG icon system, staged reveals, stat
+   counters, smooth disclosures, tab transitions, footer navigation.
+   Loads after taste.css and overrides only what the new markup needs. */
+.icon{width:1.1em;height:1.1em;flex:none;display:inline-block;vertical-align:-.15em;transition:transform .25s cubic-bezier(.16,1,.3,1)}
+.text-link span,.primary-button span,.plan-expand span,.header-contact span,.skip-journey span,.contact-button span{font-size:inherit;font-weight:inherit;margin:0;transition:none}
+.text-link:hover span{transform:none}
+.text-link:hover .icon,.primary-button:hover .icon,.header-contact:hover .icon,.contact-button:hover .icon,.news-card:hover .icon,.footer-bottom a:hover .icon{transform:translate(3px,-3px)}
+.skip-journey{display:inline-flex;align-items:center;gap:14px}.skip-journey:hover .icon{transform:translateY(3px)}
+.header-contact{display:inline-flex;align-items:center;gap:16px}
+.primary-button .icon{width:1.2em;height:1.2em}.plan-expand .icon{width:1.3em;height:1.3em}
+a,button,summary,[role=tab]{cursor:pointer}
+.news-meta .icon{width:18px;height:18px;color:var(--muted)}
+/* Language switcher: sharp geometry, one active fill */
+.lang-switch{display:inline-flex;gap:2px;border:1px solid #ffffff59;padding:3px}
+.lang-switch button{font-size:11px;letter-spacing:.08em;font-weight:600;padding:5px 9px;min-width:34px;opacity:.72;transition:background .2s,color .2s,opacity .2s}
+.lang-switch button:hover{opacity:1}
+.lang-switch button.active{background:#fff;color:#12353f;opacity:1}
+.solid .lang-switch{border-color:var(--line)}.solid .lang-switch button{color:var(--ink)}.solid .lang-switch button.active{background:var(--ink);color:var(--paper)}
+.header-actions{gap:18px}
+.mobile-menu-foot{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:40px;padding-top:26px;border-top:1px solid #ffffff2a}
+.mobile-menu .mobile-menu-foot a{font:500 16px/1.5 var(--sans);letter-spacing:0}
+.mobile-menu .lang-switch button{min-height:40px;min-width:44px;font-size:12px}
+/* Section wayfinding labels mirror the navigation */
+.section-eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:var(--muted);margin-bottom:22px}
+.section-eyebrow:before{content:'';width:26px;height:1px;background:currentColor}
+.journal .section-top{justify-content:space-between;align-items:center}.journal .section-top .section-eyebrow{margin:0}
+/* Journey chrome */
+.hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:22px 34px;margin-top:26px}.hero-link{margin-top:0}
+.scroll-hint{display:inline-flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.04em;opacity:.85}
+.scroll-hint i{width:46px;height:1px;background:#ffffff4d;position:relative;overflow:hidden}
+.scroll-hint i:after{content:'';position:absolute;inset:0;background:#fff;transform:scaleX(0);transform-origin:left;animation:hint-sweep 2.4s cubic-bezier(.65,0,.35,1) .9s 3 both}
+@keyframes hint-sweep{0%{transform:scaleX(0);transform-origin:left}45%{transform:scaleX(1);transform-origin:left}55%{transform:scaleX(1);transform-origin:right}100%{transform:scaleX(0);transform-origin:right}}
+.chapter-nav{width:min(80%,1040px);gap:18px}
+.chapter-nav button{min-width:0;opacity:.62;transition:opacity .25s}.chapter-nav button:hover,.chapter-nav button:focus-visible{opacity:.95}
+.chapter-nav button span{display:block;overflow:hidden;text-overflow:ellipsis}
+.chapter-nav button i{height:2px;background:#ffffff33;position:relative;overflow:hidden;margin-top:12px}
+.chapter-nav button i:after{content:'';position:absolute;inset:0;background:#fff;transform-origin:left;transform:scaleX(var(--fill,0))}
+.chapter-nav button.active i{background:#ffffff33}
+.journey-meta{display:flex;align-items:center;gap:28px;white-space:nowrap}
+.chapter-counter{display:inline-flex;align-items:baseline;gap:5px;font-variant-numeric:tabular-nums;font-size:12px;letter-spacing:.06em;opacity:.92}
+.chapter-counter b{font-weight:500;font-size:22px;letter-spacing:-.03em;line-height:1;display:inline-block}
+.chapter-counter i{font-style:normal;opacity:.45}.chapter-counter>span{opacity:.6}
+.scene-copy h2{overflow:hidden;padding-bottom:.06em;margin-bottom:10px}.scene-copy h2>span{display:block}
+/* Stats */
+.stats strong b{font-weight:inherit}
+/* Reveals: elements arrive from a soft blur, once */
+.motion-ready .reveal:not(.visible){opacity:0;transform:translateY(26px);filter:blur(6px)}
+.motion-ready .reveal{transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1),filter .9s cubic-bezier(.16,1,.3,1);transition-delay:var(--reveal-delay,0ms)}
+.motion-ready .reveal.visible{filter:blur(0)}
+.timeline{position:relative}
+.timeline:before{content:'';position:absolute;left:0;right:0;top:0;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 1.6s cubic-bezier(.16,1,.3,1) .2s;z-index:1}
+.timeline.visible:before{transform:scaleX(1)}
+/* Hover feedback without layout shift */
+.news-card{display:block;transition:transform .45s cubic-bezier(.16,1,.3,1)}.news-card:hover{transform:translateY(-4px)}
+.news-card h3{transition:color .2s}.news-card:hover h3{color:var(--accent)}
+.life-images figure{overflow:hidden}.life-images img{transition:transform .8s cubic-bezier(.16,1,.3,1)}.life-images figure:hover img{transform:scale(1.03)}
+.residence-tabs button{transition:color .2s,border-color .2s}.residence-tabs button:hover{color:var(--ink)}
+.residence-image{overflow:hidden}
+.faq-list summary,.nature-principles summary{transition:color .2s;align-items:center}.faq-list summary:hover,.nature-principles summary:hover{color:var(--accent)}
+.faq-list summary .icon,.nature-principles summary .icon{width:18px;height:18px;flex:none;color:var(--muted)}
+.faq-list details[open] summary .icon,.nature-principles details[open] summary .icon{transform:rotate(45deg)}
+.nature-principles details[open] summary span{transform:none}
+.nature-image{overflow:hidden}.nature-image img,.landscape-banner>img{will-change:transform}
+.plan-options button:focus-visible,.lang-switch button:focus-visible,.chapter-nav button:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.contact-socials a{display:inline-flex;align-items:center;gap:8px}
+dialog .dialog-heading button{display:grid;place-items:center}dialog .dialog-heading .icon{width:20px;height:20px}
+/* Footer: brand, section map, language */
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr auto;gap:40px;align-items:start}
+.footer-brand p{font:500 26px/1.4 var(--sans);letter-spacing:-.03em;color:var(--muted);margin-top:20px;max-width:420px}
+.footer-label{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.footer-nav{display:flex;flex-direction:column;gap:10px;font-size:15px}.footer-nav a{width:fit-content;transition:color .2s}.footer-nav a:hover{color:var(--accent)}
+.footer .lang-switch{border-color:var(--line)}.footer .lang-switch button{color:var(--ink)}.footer .lang-switch button.active{background:var(--ink);color:var(--paper)}
+.footer-bottom a{display:inline-flex;align-items:center;gap:8px}
+@media(prefers-color-scheme:dark){.solid .lang-switch button.active,.footer .lang-switch button.active{background:var(--accent);color:#f7f9fa}}
+@media(max-width:1100px){.chapter-nav{width:78%;gap:12px}.chapter-nav button{font-size:10px}.header-actions{gap:12px}.lang-switch button{min-width:30px;padding:5px 7px}}
+@media(max-width:760px){.header-actions .lang-switch,.header-contact{display:none}.chapter-nav button{font-size:0}.chapter-nav button span{display:none}.journey-bottom{flex-wrap:wrap;gap:12px}.chapter-nav{width:100%;gap:8px}.chapter-nav button{min-height:44px;display:flex;flex-direction:column;justify-content:center;padding:0}.chapter-nav button:before{display:none}.chapter-nav button i{margin-top:0;height:3px}.journey-meta{width:100%;justify-content:space-between}.chapter-counter b{font-size:18px}.hero-actions{gap:16px 24px}.scroll-hint{display:none}.section-eyebrow{font-size:11px;margin-bottom:16px}.footer-top{grid-template-columns:1fr;gap:32px}.footer-brand p{font-size:23px}.mobile-menu-foot{flex-direction:column;align-items:flex-start;gap:18px}}
+@media(prefers-reduced-motion:reduce){.motion-ready .reveal:not(.visible){opacity:1;transform:none;filter:none}.scroll-hint i:after{animation:none;transform:scaleX(1)}.timeline:before{transform:scaleX(1);transition:none}.news-card:hover{transform:none}.life-images figure:hover img{transform:none}}
+/* Preloader: the whole journey lands before the page becomes scrubbable */
+html.is-loading{overflow:hidden}
+html.is-loading .hero-copy,html.is-loading .hero-copy *,html.is-loading .scroll-hint i:after{animation-play-state:paused!important}
+.preloader{position:fixed;inset:0;z-index:1000;background:#0b1d26;color:#f4f7f8;display:grid;grid-template-rows:auto 1fr auto;padding:clamp(22px,3.4vw,44px) clamp(22px,4vw,56px);overflow:hidden;transition:opacity 1s cubic-bezier(.16,1,.3,1),visibility 0s 1s;font-family:var(--sans,'Manrope',system-ui,sans-serif)}
+.preloader.is-done{opacity:0;visibility:hidden;pointer-events:none}
+.preloader-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.16;filter:saturate(.7) blur(2px);transform:scale(1.06);animation:preloader-drift 18s ease-in-out infinite alternate}
+.preloader:after{content:'';position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 100%,#0b1d2600 0%,#0b1d26 70%)}
+.preloader>*{position:relative;z-index:1}.preloader>.preloader-bg,.preloader:after{z-index:0}
+.preloader-top{display:flex;justify-content:space-between;align-items:center}
+.preloader-top img{width:150px;height:auto;filter:brightness(0) invert(1)}
+.preloader-count{display:inline-flex;align-items:baseline;gap:5px;font-size:12px;letter-spacing:.08em;font-variant-numeric:tabular-nums;opacity:.85}
+.preloader-count b{font-weight:500;font-size:20px;letter-spacing:-.03em}.preloader-count i{font-style:normal;opacity:.45}
+.preloader-centre{display:grid;place-content:center;text-align:center;gap:10px}
+.preloader-title{font-size:12px;letter-spacing:.16em;text-transform:uppercase;opacity:.72}
+.preloader-pct{font-size:clamp(84px,15vw,180px);font-weight:300;letter-spacing:-.055em;line-height:.95;font-variant-numeric:tabular-nums;display:inline-flex;align-items:flex-start;justify-content:center}
+.preloader-pct small{font-size:.24em;font-weight:400;letter-spacing:-.02em;margin-top:.32em;margin-left:.08em;opacity:.55}
+.preloader-note{font-size:13px;letter-spacing:.02em;opacity:.62;min-height:1.4em;margin:0}
+.preloader-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;font-size:12px;letter-spacing:.04em}
+.preloader-chapters{display:flex;gap:6px 20px;flex-wrap:wrap}
+.preloader-chapters span{opacity:.3;transition:opacity .5s cubic-bezier(.16,1,.3,1)}.preloader-chapters span.on{opacity:1}
+.preloader-skip{color:inherit;font:inherit;letter-spacing:.06em;text-transform:uppercase;padding:10px 0;border-bottom:1px solid #ffffff55;opacity:0;pointer-events:none;transition:opacity .5s,border-color .2s;white-space:nowrap}
+.preloader.can-skip .preloader-skip{opacity:.75;pointer-events:auto}.preloader.can-skip .preloader-skip:hover{opacity:1;border-color:#fff}
+.preloader-bar{position:absolute;left:0;right:0;bottom:0;height:2px;background:#ffffff1c}
+.preloader-bar span{display:block;height:100%;background:#fff;transform:scaleX(0);transform-origin:left;transition:transform .3s linear}
+@keyframes preloader-drift{from{transform:scale(1.06) translate3d(0,0,0)}to{transform:scale(1.1) translate3d(-1.5%,-1%,0)}}
+@media(max-width:760px){.preloader-chapters{display:none}.preloader-bottom{justify-content:center}.preloader-top img{width:124px}}
+@media(prefers-reduced-motion:reduce){.preloader-bg{animation:none}.preloader{transition:none}}

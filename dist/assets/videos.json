@@ -9,7 +9,8 @@
     ],
     "poster": "assets/poster-1.webp",
     "sha256": "d3b790cb3f1850f343d7744db64b97985f2d990d359d0a63e195f97532f16d17",
-    "gop": 2
+    "gop": 2,
+    "bytes": 31706892
   },
   {
     "source": "secondframeV2.mp4",
@@ -21,7 +22,8 @@
     ],
     "poster": "assets/poster-2.webp",
     "sha256": "46bb2a1c94b7aa4689a98d33168e78919d1d65a281ec74cef952e70bfd082e8f",
-    "gop": 2
+    "gop": 2,
+    "bytes": 30984320
   },
   {
     "source": "third.mp4",
@@ -31,7 +33,33 @@
     ],
     "poster": "assets/poster-3.webp",
     "sha256": "754f60be8f859d2fb8f9432eb28343b0e5c8881f4e9a68a749271b6e5049efdf",
-    "gop": 2
+    "gop": 2,
+    "bytes": 9895239
+  },
+  {
+    "source": "afterinterior.mp4",
+    "parts": [
+      "assets/afterinterior-1.bin",
+      "assets/afterinterior-2.bin",
+      "assets/afterinterior-3.bin"
+    ],
+    "poster": "assets/afterinterior-poster.webp",
+    "sha256": "9fe1f950da978b2d32cefbd08604ff512fdcf81d5be09d5e354c374dfec458da",
+    "gop": 2,
+    "bytes": 24776973
+  },
+  {
+    "source": "walking_out.mp4",
+    "parts": [
+      "assets/walkingout-1.bin",
+      "assets/walkingout-2.bin",
+      "assets/walkingout-3.bin",
+      "assets/walkingout-4.bin"
+    ],
+    "poster": "assets/walkingout-poster.webp",
+    "sha256": "c3e187f3d9bc9cd5511f47a04a5df29a12c7cc4c259d9184749c5fc1309cd04a",
+    "gop": 2,
+    "bytes": 27466032
   },
   {
     "source": "5frame.mp4",
@@ -43,28 +71,32 @@
     ],
     "poster": "assets/poster-4.webp",
     "sha256": "8c722e3b8469be0116b4838010c8acbc931d4cc6f42b951a7a79473b36de9301",
-    "gop": 2
+    "gop": 2,
+    "bytes": 30619308
   },
   {
-    "source": "6frame.mp4",
+    "source": "parkingtolot.mp4",
     "parts": [
-      "assets/smooth-5-1.bin",
-      "assets/smooth-5-2.bin",
-      "assets/smooth-5-3.bin"
+      "assets/parkingtolot-1.bin",
+      "assets/parkingtolot-2.bin",
+      "assets/parkingtolot-3.bin",
+      "assets/parkingtolot-4.bin",
+      "assets/parkingtolot-5.bin"
     ],
-    "poster": "assets/poster-5.webp",
-    "sha256": "ae8077ca59d5b403d4f70e8f52e038ad8b5481e5cbc0f9620d248de8c03b8c1e",
-    "gop": 2
+    "poster": "assets/parking-poster.webp",
+    "sha256": "41b5baf926fef888d1f77ce5208adc1b5fd3400935740f503e8c7fdd06a8ffe8",
+    "gop": 2,
+    "bytes": 35280443
   },
   {
-    "source": "last.mp4",
+    "source": "lastfin.mp4",
     "parts": [
-      "assets/smooth-6-1.bin",
-      "assets/smooth-6-2.bin",
-      "assets/smooth-6-3.bin"
+      "assets/lastfin-1.bin",
+      "assets/lastfin-2.bin"
     ],
-    "poster": "assets/poster-6.webp",
-    "sha256": "46031eb69d4aa3b39b008e49113ad5f216d3b4d315a10fd5f8f5be6b8fc39e16",
-    "gop": 2
+    "poster": "assets/lastfin-poster.webp",
+    "sha256": "cf3cb933f46b4701c03c72e18e2ed92ad7f5fdb1ed29dddcc183feae830efe0f",
+    "gop": 2,
+    "bytes": 14911095
   }
 ]
