@@ -12,7 +12,7 @@ Project information comes from https://uz.seabreeze.az/, including the 25 August
 
 The opening sequence is firstframe → secondframeV2 → third → afterinterior → walking_out → 5frame → parkingtolot → lastfin. Seams were checked frame-to-frame with the scroll-world method: each clip’s first frame matches the previous clip’s last frame in composition (the walking_out clip opens on the same promenade the afterinterior clip ends on, and closes on the same aerial the 5frame clip opens with). No new imagery or animation was generated. The original MP4s and renders remain untouched in the root and renders folder.
 
-The web playback copies retain native resolution and use H.264 CRF 19, GOP 2 and no B-frames or audio to reduce seek latency. MP4 bytes are divided into 8 MiB chunks for static hosting and reconstructed in-memory as video blobs. The manifests include SHA-256 checksums. Desktop scroll uses frame-rate-independent exponential smoothing, coalesced seeking and nearby-clip prefetch. Chapters have weighted scroll shares (the opening flyover and the finale dwell longer) and a mild mid-scene linger on the first and last clips, following the scroll-world pacing guidance; seam frames are untouched. Phones preserve the complete landscape composition; no portrait footage is generated. Reduced-motion visitors see posters without loading the videos.
+The web playback copies retain native resolution and use H.264 CRF 23 with a keyframe every 6 frames (GOP 6) and no B-frames or audio, so any scroll position is at most five frames of decoding away while the whole journey stays under 90 MB. MP4 bytes are divided into 8 MiB chunks for static hosting and reconstructed in-memory as video blobs. The manifests include SHA-256 checksums. Desktop scroll uses frame-rate-independent exponential smoothing, coalesced seeking and nearby-clip prefetch. Chapters have weighted scroll shares (the opening flyover and the finale dwell longer) and a mild mid-scene linger on the first and last clips, following the scroll-world pacing guidance; seam frames are untouched. Phones preserve the complete landscape composition; no portrait footage is generated. Reduced-motion visitors see posters without loading the videos.
 
 ## Interactions
 
@@ -34,7 +34,7 @@ The illustrative space planner describes user preferences, not official stock or
 
 ## Preloader
 
-On entry a full-screen loader streams all eight chapters (about 206 MB of chunked H.264) before the page becomes scrollable, so the journey never waits on the network mid-scroll. Progress is counted in received bytes against the sizes recorded in `dist/assets/videos.json`; the opening chapter is fetched first and each chapter name lights up as it lands. A skip control appears after six seconds for slow connections, in which case chapters keep loading in the background and posters stand in until they arrive. Reduced-motion visitors skip the loader entirely (posters only).
+On entry a full-screen loader streams all eight chapters (about 90 MB of chunked H.264) before the page becomes scrollable, so the journey never waits on the network mid-scroll. Progress is counted in received bytes against the sizes recorded in `dist/assets/videos.json`; the opening chapter is fetched first and each chapter name lights up as it lands. A skip control appears after six seconds for slow connections, in which case chapters keep loading in the background and posters stand in until they arrive. Reduced-motion visitors skip the loader entirely (posters only).
 
 ## Deployment
 

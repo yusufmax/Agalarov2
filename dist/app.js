@@ -132,7 +132,7 @@ addEventListener('scroll',schedule,{passive:true});let lastWidth=innerWidth;
 addEventListener('resize',()=>{if(innerWidth!==lastWidth){lastWidth=innerWidth;schedule()}});
 for(const ev of ['pointerdown','touchstart','keydown'])addEventListener(ev,()=>{if(!primed){primed=true;states.forEach(s=>s?.video&&prime(s.video))}},{once:true,passive:true});
 chapters.forEach(b=>b.addEventListener('click',()=>{const i=Number(b.dataset.chapter),d=journey.offsetHeight-pin.offsetHeight;scrollTo({top:journey.offsetTop+d*(starts[i]+.12*weights[i]/totalW),behavior:reduce?'instant':'smooth'})}));
-fetch('assets/videos.json?v=journey-8').then(r=>r.json()).then(data=>{assets=data;active=-1;preload()}).catch(()=>{loaderDismiss()});
+fetch('assets/videos.json?v=journey-9').then(r=>r.json()).then(data=>{assets=data;active=-1;preload()}).catch(()=>{loaderDismiss()});
 
 /* ---------- Scroll-linked parallax on the two full-bleed photographs ---------- */
 const px=[...document.querySelectorAll('[data-parallax]')];
