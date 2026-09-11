@@ -39,3 +39,5 @@ On entry a full-screen loader streams all eight chapters (about 90 MB of chunked
 ## Deployment
 
 The site is published from `dist/` by the GitHub Actions workflow in `.github/workflows/pages.yml` (GitHub Pages, source "GitHub Actions"). Every push to `main` redeploys. All asset paths are relative, so the site works under the repository sub-path.
+
+`netlify.toml` publishes the same `dist/` folder on Netlify with no build command and one-year immutable caching for the versioned video chunks and fonts; link the repository in the Netlify dashboard and the settings apply automatically.
