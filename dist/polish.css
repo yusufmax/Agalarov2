@@ -83,7 +83,7 @@ html.is-loading .hero-copy,html.is-loading .hero-copy *,html.is-loading .scroll-
 .preloader.is-done{opacity:0;visibility:hidden;pointer-events:none}
 .preloader-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.16;filter:saturate(.7) blur(2px);transform:scale(1.06);animation:preloader-drift 18s ease-in-out infinite alternate}
 .preloader:after{content:'';position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 100%,#0b1d2600 0%,#0b1d26 70%)}
-.preloader>*{position:relative;z-index:1}.preloader>.preloader-bg,.preloader:after{z-index:0}
+.preloader>*{position:relative;z-index:1}.preloader>.preloader-bg,.preloader>.preloader-bar{position:absolute}.preloader>.preloader-bg,.preloader:after{z-index:0}
 .preloader-top{display:flex;justify-content:space-between;align-items:center}
 .preloader-top img{width:150px;height:auto;filter:brightness(0) invert(1)}
 .preloader-count{display:inline-flex;align-items:baseline;gap:5px;font-size:12px;letter-spacing:.08em;font-variant-numeric:tabular-nums;opacity:.85}
